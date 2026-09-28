@@ -1,0 +1,123 @@
+<header id="header" class="header">
+    <div class="hd_inner">
+        <!-- data-* : data-logo (homepage.images[0].logo[isSelected].url / <img>로 주입, 없으면 placeholder) -->
+        <div class="logo"><a href="index.html"><img alt="로고" data-logo></a></div>
+        <div class="hd_lnb">
+            <ul>
+                <li class="depth1">
+                    <a href="main.html" class="depth1_a"><span>ABOUT</span></a>
+                    <ul class="depth_box">
+                        <li><a href="main.html">외부풍경</a></li>
+                        <li><a href="directions.html">오시는길</a></li>
+                    </ul>
+                </li>
+                <li class="depth1">
+                    <a href="layout-map.html" class="depth1_a"><span>ROOMS</span></a>
+                    <!-- data-* : data-rooms-submenu (roomtypes[].name 동적 생성, 미리보기 다음에) -->
+                    <ul class="depth_box" data-rooms-submenu>
+                        <li data-menu-id="layout-map"><a href="layout-map.html">미리보기</a></li>
+                        <!-- MAPPER: roomtypes[].name → room.html?room_id={id} 동적 생성 -->
+                    </ul>
+                </li>
+                <li class="depth1">
+                    <a href="facility.html" class="depth1_a"><span>SPECIAL</span></a>
+                    <!-- data-* : data-facility-submenu (property.facilities[].name 동적 생성) -->
+                    <ul class="depth_box" data-facility-submenu>
+                        <!-- MAPPER: facilities[].name → facility.html?id={id} 동적 생성 -->
+                    </ul>
+                </li>
+                <li class="depth1">
+                    <!-- data-* : data-booking-link (property.realtimeBookingId) -->
+                    <a href="#!" class="depth1_a" target="_blank" data-booking-link><span>RESERVE</span></a>
+                    <ul class="depth_box">
+                        <li><a href="#!" target="_blank" data-booking-link>예약하기</a></li>
+                        <li><a href="reservation.html">이용안내</a></li>
+                    </ul>
+                </li>
+                <!-- data-* : data-travel-menu (TRAVEL 대메뉴: nearbyAttractions.enabled=false면 대/소메뉴 모두 숨김) -->
+                <li class="depth1" data-travel-menu>
+                    <a href="nearby-attractions.html" class="depth1_a"><span>TRAVEL</span></a>
+                    <ul class="depth_box">
+                        <li><a href="nearby-attractions.html">주변여행지</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!-- 실시간예약 (PC) -->
+        <a href="#!" target="_blank" class="btn_reserve" data-booking-link>
+            <img src="images/ico_02.png" class="reser_price">
+            <span class="under" style="background:url(images/bt_reserve.png) no-repeat top center; background-size:24px auto">Reserve</span>
+            <span class="over" style="background:url(images/bt_reserve.png) no-repeat top center; background-size:24px auto">Reserve</span>
+        </a>
+        <!-- data-* : data-ybs-button (property.ybsId / 없으면 숨김) -->
+        <a href="#!" target="_blank" class="btn_ybs" style="z-index:999;" data-ybs-button>
+            <span class="under" style="background:url(images/ybs.png) no-repeat top center; background-size:24px auto">YBS</span>
+            <span class="over" style="background:url(images/ybs.png) no-repeat top center; background-size:24px auto">YBS</span>
+        </a>
+        <a href="#n" class="btn_menu">
+            <span class="under" style="background:url(images/bt_mnall.png) no-repeat center center; background-size:65% auto"></span>
+            <span class="over" style="background:url(images/bt_mnall.png) no-repeat center center; background-size:65% auto"></span>
+        </a>
+    </div><!--// hd_inner -->
+    <div class="hd_lnb_bg"></div>
+    <!-- s: aside (모바일 메뉴) -->
+    <div class="aside">
+        <a href="#" class="btn_close" style="background:url(images/mn_close.png) no-repeat center center" alt="닫기버튼"></a>
+        <div class="aisde_inner">
+            <div class="aside_box">
+                <div class="depth1">ABOUT</div>
+                <ul class="depth_list">
+                    <li><a href="main.html">외부풍경</a></li>
+                    <li><a href="directions.html">오시는길</a></li>
+                </ul>
+                <div class="depth1">ROOMS</div>
+                <!-- data-* : data-rooms-submenu-mobile (roomtypes[].name 동적 생성) -->
+                <ul class="depth_list" data-rooms-submenu-mobile>
+                    <li data-menu-id="layout-map"><a href="layout-map.html">미리보기</a></li>
+                    <!-- MAPPER: roomtypes[].name 동적 생성 -->
+                </ul>
+                <div class="depth1">SPECIAL</div>
+                <!-- data-* : data-facility-submenu-mobile (facilities[].name 동적 생성) -->
+                <ul class="depth_list" data-facility-submenu-mobile>
+                    <!-- MAPPER: facilities[].name 동적 생성 -->
+                </ul>
+                <div class="depth1">RESERVE</div>
+                <ul class="depth_list">
+                    <li><a href="#!" target="_blank" data-booking-link>예약하기</a></li>
+                    <li><a href="reservation.html">이용안내</a></li>
+                </ul>
+                <!-- data-* : data-travel-menu (TRAVEL 대/소메뉴 모두 enabled=false면 숨김) -->
+                <div class="depth1" data-travel-menu>TRAVEL</div>
+                <ul class="depth_list" data-travel-menu>
+                    <li><a href="nearby-attractions.html">주변여행지</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- e: aside -->
+    <div class="aside_bg"></div>
+</header>
+<!-- 위로가기 버튼 (전 페이지 공통, scroll-wrap 밖 → position:fixed 정상) -->
+<a href="#doc" class="top-btn"><span class="blind">위로</span></a>
+<!-- 모바일 전용 우측하단 플로팅 예약 버튼 (data-booking-link → 매퍼가 예약 URL 연결) -->
+<!-- 우측 하단 플로팅 버튼 2개. 상담하기(아래) + 예약하기(위) 순으로 쌓인다.
+     예약하기는 `for_m` 이라 모바일에서만 뜨고, 상담하기는 총판A + tripPropertyId 가
+     있을 때 전 화면폭에서 뜬다 (header-footer-mapper.mapConsult). -->
+
+<!-- data-* 속성 : data-consult-button (property.tripPropertyId + partnerType)
+     상담 URL 은 `https://www.bookingplay.co.kr/api/cti_eicn/kakao_happy_talk?tid={tripPropertyId}` -->
+<div id="talk_custom_button" data-consult-wrap>
+  <a title="상담하기" href="#!" target="_blank" data-consult-button>
+    <img src="images/consult.png" alt="상담하기" />
+  </a>
+</div>
+
+<!-- data-* 속성 : data-booking-link (property.realtimeBookingId) -->
+<div class="ft_btn_reserve for_m on">
+  <a title="예약하기" href="#!" target="_blank" data-booking-link>
+    <img src="images/talk.png" alt="예약하기" />
+  </a>
+</div>
+<!-- 커스텀 커서 (전 페이지 공통) -->
+<div id="custom_cursor"><div class="custom_cursor_inner"><div class="custom_cursor_circle"></div></div></div>
+<div id="custom_cursor_text"><div class="custom_cursor_inner"><div class="custom_cursor_txt"><span></span></div></div></div>

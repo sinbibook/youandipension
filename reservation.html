@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="is-smooth-scroll-compatible is-loading">
+<head>
+    <!-- 렌더 게이트: 매핑 전 placeholder/fallback 깜빡임 방지 (매핑 완료 시 페이드인) -->
+    <style>html.tpl-loading body{opacity:0}body{opacity:1;transition:opacity .3s ease}</style>
+    <script>document.documentElement.classList.add('tpl-loading');window.__tplReveal=function(){document.documentElement.classList.remove('tpl-loading');};setTimeout(function(){window.__tplReveal&&window.__tplReveal();},3000);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta property="og:type" content="website">
+    <title data-page-title>영월 유앤아이 스파 펜션 - 예약안내</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" type="text/css" href="styles/theme.css">
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/board_black.css">
+    <link rel="stylesheet" type="text/css" href="styles/popup_black.css">
+    <link rel="stylesheet" type="text/css" href="styles/swiper-bundle.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="js/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="js/gsap.min.js"></script>
+    <script type="text/javascript" src="js/polyfill.min.js"></script>
+    <script type="text/javascript" src="js/sly.js"></script>
+    <script nomodule="" src="//polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/locomotive-scroll.min.js"></script>
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="영월 유앤아이 스파 펜션 - 예약안내" />
+  <meta property="og:description" content="일상의 피로를 풀어 줄 따뜻한 스파와 감성을 채워 줄 불멍이 있는 영월 유앤아이 스파 펜션으로 놀러 오세요." />
+  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/uAdysbIawYSe.jpg" />
+  <meta property="og:url" content="https://youandipension.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="영월 유앤아이 스파 펜션 - 예약안내" />
+  <meta name="twitter:description" content="일상의 피로를 풀어 줄 따뜻한 스파와 감성을 채워 줄 불멍이 있는 영월 유앤아이 스파 펜션으로 놀러 오세요." />
+  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/uAdysbIawYSe.jpg" />
+  <meta name="naver-site-verification" content="4d7ecdc640a0e328dd3fe9e84e2033fb2a5a10a5" />
+</head>
+<body>
+<div id="wrap">
+    <div id="header-wrap"></div>
+    <div class="scroll-wrap" id="doc" data-scroll-container="">
+        <!-- s: container -->
+        <div id="container">
+            <!--// sub_visual -->
+            <div class="sub_visual visual travel fadeDown" data-scroll="">
+                <div class="visual_box">
+                    <div class="swiper-container">
+                        <!-- data-* : data-reservation-hero-slides | pages.reservation.sections[0].hero.images[isSelected] (배경 슬라이드 rebuild) -->
+                        <div class="swiper-wrapper" data-reservation-hero-slides></div>
+                    </div>
+                </div>
+                <!-- <a href="#n" class="scroll_down">scroll down</a> -->
+            </div>
+            <!--// sub_visual -->
+            <!-- s: content -->
+            <section id="content" class="sub">
+                <!-- s: reser-wrap -->
+                <div class="reser-wrap" id="direction">
+                    <div class="tits">
+                        <h3 class="fadeRight" data-scroll=""><span>Info</span>RESERVATION</h3>
+                    </div>
+                    <div class="info_box inner">
+                        <dt class="title_box">
+                            <h3>이용안내</h3>
+                        </dt>
+                        <!-- data-* : data-reservation-usage-guide | property.usageGuide (\n→<br>) -->
+                        <dd data-reservation-usage-guide></dd>
+                        <dt class="title_box">
+                            <h3>환불안내</h3>
+                        </dt>
+                        <!-- data-* : data-reservation-refund-policies | property.refundPolicies[] -->
+                        <dd data-reservation-refund-policies></dd>
+                    </div>
+                </div>
+                <!-- e: reser-wrap -->
+            </section>
+            <!-- e: content -->
+        </div>
+        <!-- e: container -->
+        <div id="footer-wrap"></div>
+    </div><!-- e: scroll-wrap -->
+</div><!-- e: wrap -->
+<!-- infra: SEO/헤더·푸터 동적 + 데이터 매핑 -->
+<script src="js/image-helpers.js"></script>
+<script src="js/preview-handler.js"></script>
+<script src="js/data-mapper/core/base-mapper.js"></script>
+<script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+<script src="js/data-mapper/pages/reservation-mapper.js"></script>
+<script src="js/header-footer-loader.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

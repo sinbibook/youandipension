@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="is-smooth-scroll-compatible is-loading">
+<head>
+    <!-- 렌더 게이트: 매핑 전 placeholder/fallback 깜빡임 방지 (매핑 완료 시 페이드인) -->
+    <style>html.tpl-loading body{opacity:0}body{opacity:1;transition:opacity .3s ease}</style>
+    <script>document.documentElement.classList.add('tpl-loading');window.__tplReveal=function(){document.documentElement.classList.remove('tpl-loading');};setTimeout(function(){window.__tplReveal&&window.__tplReveal();},3000);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta property="og:type" content="website">
+    <title data-page-title>영월 유앤아이 스파 펜션</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" type="text/css" href="styles/theme.css">
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/board_black.css">
+    <link rel="stylesheet" type="text/css" href="styles/popup_black.css">
+    <link rel="stylesheet" type="text/css" href="styles/swiper-bundle.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="js/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="js/gsap.min.js"></script>
+    <script type="text/javascript" src="js/polyfill.min.js"></script>
+    <script type="text/javascript" src="js/sly.js"></script>
+    <script nomodule="" src="//polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/locomotive-scroll.min.js"></script>
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="영월 유앤아이 스파 펜션" />
+  <meta property="og:description" content="일상의 피로를 풀어 줄 따뜻한 스파와 감성을 채워 줄 불멍이 있는 영월 유앤아이 스파 펜션으로 놀러 오세요." />
+  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/uAdysbIawYSe.jpg" />
+  <meta property="og:url" content="https://youandipension.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="영월 유앤아이 스파 펜션" />
+  <meta name="twitter:description" content="일상의 피로를 풀어 줄 따뜻한 스파와 감성을 채워 줄 불멍이 있는 영월 유앤아이 스파 펜션으로 놀러 오세요." />
+  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/uAdysbIawYSe.jpg" />
+  <meta name="naver-site-verification" content="4d7ecdc640a0e328dd3fe9e84e2033fb2a5a10a5" />
+</head>
+<body>
+<div id="wrap">
+    <div id="header-wrap"></div>
+    <div class="scroll-wrap" id="doc" data-scroll-container="">
+        <!-- s: container -->
+        <div id="container">
+            <!--// sub_visual -->
+            <div class="sub_visual visual travel fadeDown" data-scroll="">
+                <div class="visual_box">
+                    <div class="swiper-container">
+                        <!-- data-* : data-layout-map-hero-slides | pages.layoutMap.sections[0].hero.images[isSelected] (배경 슬라이드 rebuild) -->
+                        <div class="swiper-wrapper" data-layout-map-hero-slides></div>
+                    </div>
+                </div>
+            </div>
+            <!--// sub_visual -->
+            <!-- s: snb_wrap -->
+            <div id="snb_wrap">
+                <!-- data-* : data-room-list-nav | roomtypes[] (미리보기 li 뒤 동적 생성, room.html?room_id={id}) -->
+                <ul data-room-list-nav>
+                    <li class="on" data-menu-id="layout-map"><a href="layout-map.html">미리보기</a></li>
+                </ul>
+            </div>
+            <!-- e: snb_wrap -->
+            <!-- s: content -->
+            <section id="content" class="sub">
+                <!-- s: main_room -->
+                <div class="main_room">
+                    <div class="tits">
+                        <h3 class="fadeUp" data-scroll="">Room</h3>
+                        <p class="fadeUp" data-scroll="">Preview</p>
+                    </div>
+                    <div class="cont fadeUp" data-scroll="">
+                        <div class="room">
+                            <div class="swiper-container room-slide">
+                                <!-- data-* : data-room-list-slides | roomtypes[] (객실 카드 동적 생성) -->
+                                <div class="swiper-wrapper item" data-room-list-slides></div>
+                            </div>
+                        </div>
+                        <div class="room-ctrl">
+                            <a href="#n" class="room-prev" style="background:url(images/room_prev.png) no-repeat left center"><span>이전</span></a>
+                            <div class="room-paging"></div>
+                            <a href="#n" class="room-next" style="background:url(images/room_next.png) no-repeat right center"><span>다음</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- e: main_room -->
+                <div class="pre-wrap" id="direction">
+                    <!-- data-* : data-layout-map-images | pages.layoutMap.sections[0].about.images[isSelected] (배치도 동적 생성) -->
+                    <div class="vimg" data-layout-map-images></div>
+                </div>
+            </section>
+            <!-- e: content -->
+        </div>
+        <!-- e: container -->
+        <div id="footer-wrap"></div>
+    </div><!-- e: scroll-wrap -->
+</div><!-- e: wrap -->
+<!-- infra: SEO/헤더·푸터 동적 + 데이터 매핑 -->
+<script src="js/image-helpers.js"></script>
+<script src="js/preview-handler.js"></script>
+<script src="js/data-mapper/core/base-mapper.js"></script>
+<script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+<script src="js/data-mapper/pages/layout-map-mapper.js"></script>
+<script src="js/header-footer-loader.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

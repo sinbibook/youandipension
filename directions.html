@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" class="is-smooth-scroll-compatible is-loading">
+<head>
+    <!-- 렌더 게이트: 매핑 전 placeholder/fallback 깜빡임 방지 (매핑 완료 시 페이드인) -->
+    <style>html.tpl-loading body{opacity:0}body{opacity:1;transition:opacity .3s ease}</style>
+    <script>document.documentElement.classList.add('tpl-loading');window.__tplReveal=function(){document.documentElement.classList.remove('tpl-loading');};setTimeout(function(){window.__tplReveal&&window.__tplReveal();},3000);</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta property="og:type" content="website">
+    <title data-page-title>영월 유앤아이 스파 펜션 - 오시는길</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" type="text/css" href="styles/theme.css">
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="stylesheet" type="text/css" href="styles/board_black.css">
+    <link rel="stylesheet" type="text/css" href="styles/popup_black.css">
+    <link rel="stylesheet" type="text/css" href="styles/swiper-bundle.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="js/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="js/gsap.min.js"></script>
+    <script type="text/javascript" src="js/polyfill.min.js"></script>
+    <script type="text/javascript" src="js/sly.js"></script>
+    <script nomodule="" src="//polyfill.io/v3/polyfill.min.js?features=Object.assign%2CElement.prototype.append%2CNodeList.prototype.forEach%2CCustomEvent%2Csmoothscroll" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/locomotive-scroll.min.js"></script>
+  <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="영월 유앤아이 스파 펜션 - 오시는길" />
+  <meta property="og:description" content="일상의 피로를 풀어 줄 따뜻한 스파와 감성을 채워 줄 불멍이 있는 영월 유앤아이 스파 펜션으로 놀러 오세요." />
+  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/uAdysbIawYSe.jpg" />
+  <meta property="og:url" content="https://youandipension.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="영월 유앤아이 스파 펜션 - 오시는길" />
+  <meta name="twitter:description" content="일상의 피로를 풀어 줄 따뜻한 스파와 감성을 채워 줄 불멍이 있는 영월 유앤아이 스파 펜션으로 놀러 오세요." />
+  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/uAdysbIawYSe.jpg" />
+  <meta name="naver-site-verification" content="4d7ecdc640a0e328dd3fe9e84e2033fb2a5a10a5" />
+</head>
+<body>
+<div id="wrap">
+    <div id="header-wrap"></div>
+    <div class="scroll-wrap" id="doc" data-scroll-container="">
+        <!-- s: container -->
+        <div id="container">
+            <!--// sub_visual -->
+            <div class="sub_visual visual travel fadeDown" data-scroll="">
+                <div class="visual_box">
+                    <div class="swiper-container">
+                        <!-- data-* : data-directions-hero-slides | customFields.pages.directions.sections[0].hero.images[isSelected] (배경 슬라이드 동적 생성) -->
+                        <div class="swiper-wrapper" data-directions-hero-slides></div>
+                    </div>
+                </div>
+            </div>
+            <!--// sub_visual -->
+            <!-- s: snb_wrap -->
+            <div id="snb_wrap">
+                <!-- 서브탭: ABOUT(외부풍경/오시는길). 현재 오시는길=directions.html active -->
+                <ul>
+                    <li><a href="main.html">외부풍경</a></li>
+                    <li class="on"><a href="directions.html">오시는길</a></li>
+                </ul>
+            </div>
+            <!-- e: snb_wrap -->
+            <!-- s: content -->
+            <section id="content" class="sub">
+                <!-- s: about-wrap -->
+                <div class="traffic-wrap">
+                    <div class="tits">
+                        <h3 class="fadeRight" data-scroll=""><span>Map</span>DIRECTION</h3>
+                    </div>
+                    <div class="map_wrap">
+                        <!-- data-* : #kakao-map | property.latitude / property.longitude (kakao-maps-sdk 지도+마커) -->
+                        <div id="kakao-map" style="width:100%;height:360px;background:#f0f0f0;"></div>
+                    </div>
+                    <div class="info_box inner">
+                        <!-- data-* : data-directions-notice-title | notice.title -->
+                        <dt class="title_box">
+                            <h3 data-directions-notice-title>이용안내</h3>
+                        </dt>
+                        <!-- data-* : data-directions-notice-description | notice.description (\n→<br>) -->
+                        <dd data-directions-notice-description></dd>
+                        <dt class="title_box">
+                            <h3>주소</h3>
+                        </dt>
+                        <!-- data-* : data-property-address | property.address -->
+                        <dd>도로명 주소 : <span data-property-address></span></dd>
+                    </div>
+                </div>
+                <!-- e: about-wrap -->
+            </section>
+            <!-- e: content -->
+        </div>
+        <!-- e: container -->
+        <div id="footer-wrap"></div>
+    </div><!-- e: scroll-wrap -->
+</div><!-- e: wrap -->
+<!-- infra: SEO/헤더·푸터 동적 + 데이터 매핑 -->
+<script src="js/image-helpers.js"></script>
+<script src="js/preview-handler.js"></script>
+<script src="js/data-mapper/core/base-mapper.js"></script>
+<script src="js/data-mapper/pages/header-footer-mapper.js"></script>
+<script src="js/data-mapper/pages/directions-mapper.js"></script>
+<script src="js/header-footer-loader.js"></script>
+<script src="js/custom.js"></script>
+<script type="text/javascript" src="js/kakao-maps-sdk.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+.popup_bg {z-index:9999;background: rgba(0,0,0,0.5);position:fixed;left:0;top:0;width:100%;height:100%;z-index:90;}
+.popup_wrap {position: absolute;width:100%;height:100%;left: 0;top: 0;z-index:999;}
+.popup_wrap .modal-dialog {margin:0;height: 100%;}
+.mh_layer_popup {overflow: hidden;background-color: #fff;padding: 10px;border: 1px solid #e9e9e9;max-width: 90%;box-sizing: border-box;margin:0 auto !important;position: absolute;}
+.mh_layer_popup_head {}
+.mh_layer_popup_desc.modal-content {position: relative;border: 1px solid #e9e9e9;font-size: 0;box-shadow: none;height: auto;position: static;border-radius: 0;overflow: auto;}
+.mh_layer_popup_desc p,
+.mh_layer_popup_desc img {-webkit-overflow-scrolling: touch;touch-action: auto;}
+.mh_layer_popup_desc img {width:100%;}
+.mh_layer_popup_foot {}
+.mh_layer_popup_foot dl {overflow: hidden;}
+.mh_layer_popup_foot dl dt {float: left;padding: 10px 0 0;}
+.mh_layer_popup_foot dl dt p {line-height: 33px;}
+.mh_layer_popup_foot dl dt p input {-webkit-appearance:checkbox;appearance: checkbox;-moz-appearance:checkbox;display: inline-block;vertical-align: middle;margin-bottom: 3px;margin-right: 5px;}
+.mh_layer_popup_foot dl dd {float: right;padding: 10px 0 0;}
+.mh_layer_popup_foot .mh_layer_popup_close {line-height: 35px;height: 35px;text-align: center;font-size: 14px;font-weight: bold;text-decoration: none;vertical-align: middle;padding: 0 20px;color: #fff;background: #36312c;border: 1px solid #36312c;transition: .5s;display: inline;cursor: pointer;-webkit-transition: background-color 0.3s ease-out;-moz-transition: background-color 0.3s ease-out;-o-transition: background-color 0.3s ease-out;transition: background-color 0.3s ease-out;}
+.mh_layer_popup_foot .mh_layer_popup_close:hover {background: #fff;color: #36312c;}
+
+@media only screen and (max-width:1450px) {
+}
+@media only screen and (max-width:1200px) {
+}
+@media only screen and (max-width:1023px) {
+}
+@media only screen and (max-width:860px) {
+    .mh_layer_popup {max-width:90%;left: 50% !important;top: 50px;transform: translate(-50%,0%);}
+}
+@media only screen and (max-width:767px) {
+}
+@media only screen and (max-width:640px) {
+}
+@media only screen and (max-width:479px) {
+    .mh_layer_popup {width: 100%;}
+    .mh_layer_popup_desc {}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

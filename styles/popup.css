@@ -1,0 +1,315 @@
+/**
+ * Popup Styles
+ * 동작: template-full-banner-slider-flat 의 popup.js 와 동일 (클래스 구조 유지)
+ * 스타일: https://fourseasonpension.kr/ (css/popup_black.css) 룩 이식
+ *  - 흰 프레임 + 얇은 회색 보더 + 라운드 없음
+ *  - 하단 "오늘 하루 보지 않기"(체크박스형) + 진한 #36312c "닫기" 버튼(hover 반전)
+ */
+
+/* Overlay (fourseason .popup_bg: rgba(0,0,0,0.5)) */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 24px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 99999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Content box (fourseason .mh_layer_popup: 흰 배경 / 10px 패딩 / 얇은 보더 / 라운드·그림자 없음) */
+.popup-content {
+    position: relative;
+    /* 폭 고정 없음 → 이미지 원본 비율대로 늘어남 (잘림 방지) */
+    width: auto;
+    min-width: 300px;
+    max-width: min(90vw, 700px);
+    max-height: 90vh;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    border-radius: 0;
+    box-shadow: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* fourseason 팝업엔 우상단 원형 닫기버튼이 없음 → 숨김 (하단 닫기/오버레이/ESC 로 닫힘) */
+.popup-close {
+    display: none;
+}
+
+/* Image (fourseason .mh_layer_popup_desc img: width 100%, 얇은 보더) */
+.popup-image-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 이미지 래퍼 (텍스트 오버레이 기준점) */
+.popup-image-wrap {
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/* <img> 로 렌더링 → 원본 비율 유지, 잘리지 않음 */
+.popup-image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    /* 세로로 긴 이미지도 화면 안에 다 들어오도록 (푸터/패딩 여유 제외) */
+    max-height: calc(90vh - 80px);
+    margin: 0 auto;
+    border: 1px solid #e9e9e9;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
+/* 텍스트 오버레이 (있을 때만) */
+.popup-text-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    padding: 24px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    box-sizing: border-box;
+    pointer-events: none;
+}
+
+.popup-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #36312c;
+    margin: 0 0 16px 0;
+    line-height: 1.4;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.popup-description {
+    font-size: 16px;
+    color: #36312c;
+    margin: 0;
+    line-height: 1.6;
+    text-align: left;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.8), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer (fourseason .mh_layer_popup_foot: 좌측 체크박스 라벨 / 우측 진한 닫기버튼) */
+.popup-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 0;
+    background: #fff;
+    border-top: none;
+}
+
+/* "오늘 하루 보지 않기" → fourseason 체크박스형 라벨 (::before 로 체크박스 모양) */
+.popup-today-hide {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    line-height: 33px;
+    color: #333;
+    cursor: pointer;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.popup-today-hide::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    border: 1px solid #999;
+    background: #fff;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.popup-today-hide:hover {
+    color: #36312c;
+}
+
+.popup-today-hide:hover::before {
+    border-color: #36312c;
+}
+
+/* "닫기" → fourseason 진한 솔리드 버튼 (#36312c, hover 시 반전) */
+.popup-close-text {
+    line-height: 35px;
+    height: 35px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background: #36312c;
+    border: 1px solid #36312c;
+    cursor: pointer;
+    transition: background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+.popup-close-text:hover {
+    background: #fff;
+    color: #36312c;
+}
+
+/* Popup Container (비어있으면 숨김) */
+#popup-container {
+    display: none;
+}
+
+#popup-container:not(:empty) {
+    display: block;
+}
+
+/* ===== Slider (다중 이미지일 때) - 동작 유지, fourseason 톤으로 정리 ===== */
+.popup-slider {
+    position: relative;
+    width: 100%;
+}
+
+.popup-slides {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #e9e9e9;
+}
+
+.popup-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.05);
+    transition: opacity 0.6s ease, visibility 0.6s ease, transform 0.6s ease;
+}
+
+.popup-slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+
+.popup-slide .popup-image {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    border: none;
+}
+
+.popup-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(54, 49, 44, 0.6);
+    color: #fff;
+    border: none;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: background 0.2s ease;
+}
+
+.popup-arrow:hover {
+    background: rgba(54, 49, 44, 0.85);
+}
+
+.popup-arrow--prev {
+    left: 10px;
+}
+
+.popup-arrow--next {
+    right: 10px;
+}
+
+.popup-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.popup-dot {
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.popup-dot.active {
+    background: #fff;
+    transform: scale(1.2);
+}
+
+.popup-dot:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+
+/* ===== Responsive (fourseason: 작은 화면에서 중앙 정렬, 폭 확대) ===== */
+@media (max-width: 860px) {
+    .popup-content {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 479px) {
+    .popup-content {
+        min-width: 0;
+        max-width: 92%;
+    }
+
+    .popup-close-text {
+        padding: 0 16px;
+    }
+
+    .popup-today-hide,
+    .popup-close-text {
+        font-size: 13px;
+    }
+}
+
+/* 스크롤 잠금 없음 (jajakdoaroma 동일 - 배경 스크롤 허용) */

@@ -1,0 +1,154 @@
+@charset "utf-8";
+/* 폰트: 테마 폰트(Noto Serif KR=ko-main)는 theme.css에서 로드.
+   Pretendard(ko-sub)·Roustel(en-main)는 아래 로컬 @font-face. Montserrat는 보조 디자인 폰트 */
+@import url('//fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800&display=swap');
+
+@font-face { 
+  font-family: 'Roustel'; 
+  font-style: normal; 
+  src: url(../fonts/roustel.woff) format('woff'),
+      url(../fonts/roustel.otf) format('opentype');
+} 
+
+/* font-family: 'Noto Sans KR'; */ 
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard';
+    src: url('../fonts/Pretendard-ExtraBold.woff') format('woff');
+    font-weight: 800;
+    font-style: normal;
+}
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	color:#333;
+    font-size:16px;
+    font-weight:400;
+	font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', dotum, sans-serif;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+div, ul, ol, li, dl, dt, dd, form, fieldset, input,textarea, button, p, h1, h2, h3, h4, h5, h6, blockquote, iframe, th, td { margin:0; padding:0;-webkit-text-size-adjust:none}
+img {border: 0 none; vertical-align:middle; max-width:100%;}
+li {list-style:none;}
+button{background:transparent; cursor:pointer; vertical-align:middle; margin:0;}
+button, input[type="submit"], input[type="button"] {background:transparent; cursor:pointer; *overflow:visible;}
+button span{display:none;}
+input, button {
+   -webkit-appearance: none;
+   -webkit-border-radius: 0;
+}
+h1, h2, h3, h4, h5, h6{font-size:100%; font-style:normal;}
+
+/* table */
+table { border-collapse:collapse; border-spacing:0; width:100%; }
+th {vertical-align:middle;}
+th, td { border-collapse:collapse; }
+legend, hr { display:none; }
+caption{text-indent:-9999em;overflow:hidden;height:0;font-size:0;line-height:0; }
+
+/* form */
+form { display:inline; }
+select, input, textarea { color:#666; font-family:'Noto Sans KR', 'Malgun Gothic', '맑은 고딕', dotum, sans-serif; font-size:inherit; vertical-align:middle; }
+fieldset, blockquote, iframe, button { border:none; }
+
+/* font */
+i, em, u, cite {font-style:normal;}
+em{font-weight:bold;}
+
+/* link */
+a {color:#666; text-decoration:none; cursor:pointer;}
+a:visited{text-decoration: none}
+a:focus{text-decoration: none}
+a:active{text-decoration: none}
+a:hover{text-decoration: none}
+
+
+
+.blind, table caption {width:1px;height:1px;overflow:hidden;position:absolute;top:-9999em;left:-9999em;display:block;text-indent:-9999em;font-size:0px;line-height:0;}
+
+
+
+
+
+
+
+
+
+
