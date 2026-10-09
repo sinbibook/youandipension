@@ -39,7 +39,7 @@
     /* 폭 고정 없음 → 이미지 원본 비율대로 늘어남 (잘림 방지) */
     width: auto;
     min-width: 300px;
-    max-width: min(90vw, 700px);
+    max-width: min(90vw, 380px);
     max-height: 90vh;
     background: #fff;
     padding: 10px;

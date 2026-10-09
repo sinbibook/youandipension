@@ -439,6 +439,8 @@ $(function() {
       var _slideCount = _rEl.querySelectorAll('.swiper-slide').length;
       var _roomBox = _rEl.closest('.room');
       var _contBox = _rEl.closest('.cont');
+      // 객실 1개: 가로 꽉 찬 카드 1장 (참고: greennaraepool.kr) — is-single
+      if (_roomBox) _roomBox.classList.toggle('is-single', _slideCount === 1);
       // 객실 2개 이하: 슬라이드 대신 정적 정사각형 배치 (참고: oreuda.co.kr)
       if (_slideCount <= 2) {
         if (window.roomSwiper) { window.roomSwiper.destroy(true, true); window.roomSwiper = null; }

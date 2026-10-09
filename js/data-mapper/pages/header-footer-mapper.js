@@ -16,7 +16,11 @@
   //    타입으로 갈리는 것은 상담하기 하나뿐이다.
   var CONSULT_PARTNER_TYPES = ['distributor_a'];
 
+  // homepage.socialLinks 의 키 — 마크업이 없는 플랫폼은 매칭 요소가 0개라 그냥 지나간다.
+  var SOCIAL_PLATFORMS = ['facebook', 'instagram', 'blog', 'youtube'];
+
   // ⚠️ base-mapper 에 `cleanText` 가 없는 템플릿이 있어 의존하지 않는다.
+  //    (상담하기·소셜링크 공통 — 문자열 정리만 한다)
   function consultText(v) {
     return v === undefined || v === null ? '' : String(v).trim();
   }
@@ -34,6 +38,7 @@
     this.mapFavicon();
     this.mapBookingLinks();
     this.mapYbsButton();
+    this.mapSocialLinks();
     this.mapConsult();
     this.mapRoomMenu();
     this.mapFacilityMenu();
@@ -171,6 +176,11 @@
     var ybs_url = 'https://rev.yapen.co.kr/external?ypIdx=';
     var ybsButtons = document.querySelectorAll('[data-ybs-button]');
 
+    // 예약 버튼의 '특가' 뱃지는 YBS 버튼이 노출될 때만 보인다
+    document.querySelectorAll('[data-ybs-badge]').forEach(function (badge) {
+      badge.style.display = ybsId ? '' : 'none';
+    });
+
     if (!ybsId) {
       ybsButtons.forEach(function (button) {
         button.style.display = 'none';
@@ -190,6 +200,34 @@
         });
       }
     });
+  };
+
+  // MAPPER: homepage.socialLinks.{platform} → [data-homepage-socialLinks-{platform}]
+  //
+  // 헤더 네이버 버튼 = `blog`(어드민 blog 칸에 네이버 플레이스 주소를 넣어 쓴다),
+  // 인스타그램 버튼 = `instagram`. facebook/youtube 는 마크업이 없어 매칭 0개다.
+  // 값이 있으면 href 를 넣고 노출, 없으면(null·빈 문자열·키 없음) 숨긴다.
+  // 마크업 기본값이 display:none 이라 매핑 전에 빈 버튼이 비치지 않는다.
+  // 하나라도 보이면 루트에 data-social="on" — PC 메뉴(hd_lnb)를 왼쪽으로 밀어 버튼과 겹치지 않게
+  // 하는 CSS 훅이다 (styles/style.css 헤더 네이버·인스타그램 절).
+  HeaderFooterMapper.prototype.mapSocialLinks = function () {
+    var links = this.getHomepage().socialLinks || {};
+    var shown = 0;
+    SOCIAL_PLATFORMS.forEach(function (platform) {
+      var url = consultText(links[platform]);
+      document.querySelectorAll('[data-homepage-socialLinks-' + platform + ']').forEach(function (el) {
+        if (!url) {
+          el.style.display = 'none';
+          return;
+        }
+        el.href = url;
+        el.setAttribute('target', '_blank');
+        el.setAttribute('rel', 'noopener');
+        el.style.display = '';
+        shown++;
+      });
+    });
+    document.documentElement.setAttribute('data-social', shown ? 'on' : 'off');
   };
 
   // 상담 URL 에 쓸 tripPropertyId. 없거나 형식이 아니면 빈 문자열.
@@ -383,8 +421,12 @@
       document.querySelectorAll(sel).forEach(function (el) { el.textContent = val; });
     }
 
-    // 상호명
+    // 상호명 — 로고가 있으면 로고가 이름 역할을 하므로 중복 노출하지 않는다
     setText('[data-footer-business-name]', b.businessName || this.getPropertyName());
+    var hasLogo = !!this.getLogo();
+    document.querySelectorAll('[data-footer-business-name]').forEach(function (el) {
+      el.style.display = hasLogo ? 'none' : '';
+    });
     // 전화번호 + tel: 링크 ← property.contactPhone (배열이면 전부 한 줄씩 노출)
     this.renderFooterPhones(this.toPhoneList(prop && prop.contactPhone));
     // 사업자 정보
