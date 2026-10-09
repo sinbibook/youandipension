@@ -178,6 +178,51 @@ header
 
 }
 
+/* ======================================================
+header 네이버·인스타그램 (homepage.socialLinks.blog / .instagram 있을 때만 노출)
+- 마크업 기본 display:none → header-footer-mapper.mapSocialLinks 가 값 있을 때만 보인다.
+- 버튼 박스·아이콘은 원본 그대로: 네이버 = fisterrapension.kr .btn_naver (N 로고 30px),
+  인스타 = thebestpoolvilla.co.kr .btn_insta (34px, top:14%).
+- 가로 위치: 원본은 % 값이라 좁은 PC 폭에서 YBS 와 겹친다(피스테라 1480px 이하 실측).
+  YBS 의 right(5% / 6% / 9%) 에 px 를 더해 [인스타][네이버] | YBS | 예약 순으로 붙인다.
+  (네이버 중심 = YBS 왼쪽 경계선 + 30px, 인스타 중심 = 네이버 + 50px)
+- 메뉴(hd_lnb)는 가운데 정렬이라 버튼이 생기면 오른쪽 끝 메뉴(RESERVE/TRAVEL)와 겹친다.
+  매퍼가 루트에 찍는 data-social="on" 일 때만 메뉴를 왼쪽으로 민다(더베스트 ≤1100px 처리와 같은 취지).
+  1481px 이상은 여유가 있어 그대로 두고, 그 아래는 TRAVEL 까지 5개 메뉴가 한 줄을 유지하는 만큼만 민다.
+=========================================================*/
+/*naver*/
+.header .btn_naver {position:absolute;right:calc(5% + 80px); top:0; width:100px;height:100px;text-align:center;display:flex;align-items: center; justify-content: center;font-size:12px;line-height:1;padding:0 0 0 0;color:#fff;letter-spacing:0;}
+.header .btn_naver span {display:block;padding-top:34px;color:#fff; font-size:12px;}
+.header .btn_naver .under{display:block;}
+/*insta*/
+.header .btn_insta {position:absolute;right:calc(5% + 130px); top:14%; width:100px;height:100px;text-align:center;display:flex;align-items: center; justify-content: center;font-size:12px;line-height:1;padding:0 0 0 0;color:#fff;letter-spacing:0;z-index:90;}
+.header .btn_insta span{display:block;padding-top:34px;color:#fff; font-size:12px;}
+.header .btn_insta .under{display:block; height:36px}
+/* 원본 그대로 100x100 투명 상자를 쓰다 보니 네이버 상자가 인스타 아이콘 위를 덮어, 인스타를 눌러도 네이버로 갔다.
+   상자는 클릭을 통과시키고 아이콘(.under)만 클릭을 받게 한다 (링크 동작은 그대로 a 가 처리). */
+.header .btn_naver,.header .btn_insta{pointer-events:none;}
+.header .btn_naver .under,.header .btn_insta .under{pointer-events:auto;}
+
+@media only screen and (max-width:1480px) {
+    .header .btn_naver {right:calc(6% + 80px);}
+    .header .btn_insta {right:calc(6% + 130px);}
+    [data-social='on'] .header .hd_lnb {padding-left:0; padding-right:80px;}
+}
+@media only screen and (max-width:1280px) {
+    .header .btn_naver {right:calc(9% + 80px);}
+    .header .btn_insta {right:calc(9% + 130px);}
+    [data-social='on'] .header .hd_lnb {padding-left:0; padding-right:140px;}
+}
+@media only screen and (max-width:999px) {
+    /* 모바일: 예약·YBS 는 숨고 메뉴(right:20px) 왼쪽에 [인스타][네이버] — 네이버는 피스테라 값 그대로 */
+    .header .btn_naver {right:5%;top:-17%;}
+    .header .btn_insta {right:calc(5% + 46px);top:2px;}
+}
+@media only screen and (max-width:480px) {
+    .header .btn_naver {right:10%;}
+    .header .btn_insta {right:calc(10% + 46px);}
+}
+
 
 
 .aside {position:relative; z-index:1112;position:fixed;right:-480px;top:0;height:100%; max-height:100%; min-width:320px;width:86%; max-width:480px;overflow-y:auto;background:var(--color-primary);transition-timing-function:ease-in-out;display:flex;align-items: center; justify-content: center;-webkit-transition:right .6s cubic-bezier(.77,0,.175,1);-moz-transition:right .6s cubic-bezier(.77,0,.175,1);transition:right .6s cubic-bezier(.77,0,.175,1)}
@@ -511,7 +556,7 @@ visual
 .main_room{padding:150px 0 150px 0;}
 .main_room .tits{text-align:center;}
 .main_room .tits h3{font-family:'Montserrat'; color:var(--color-secondary); font-weight:500; line-height:1.1em; font-size:45px;animation-delay:0.2s;}
-.main_room .tits p{font-size:35px; font-weight:400 ;color:var(--color-primary);font-family: var(--font-en-main); line-height:1.1em; text-indent:15px; margin-top:-19px;animation-delay:0.3s;}
+.main_room .tits p{font-size:35px; font-weight:400 ;color:#ffa81a;font-family: var(--font-en-main); line-height:1.1em; text-indent:15px; margin-top:-19px;animation-delay:0.3s;}
 
 .main_room .cont{max-width:1056px; margin:0 auto; margin-top:40px;padding:0 80px; position:Relative;animation-delay:0.4s;}
 .main_room .cont .room{width:calc(100% + 34px); margin-left:-17px; overflow:hidden; box-sizing:border-box ; padding:0 17px;}
@@ -545,8 +590,10 @@ visual
 .main_room .cont.room-static .room .swiper-container{overflow:hidden;}
 .main_room .cont .room.is-static .swiper-wrapper{display:flex; flex-wrap:wrap; justify-content:center; gap:34px; transform:none !important;}
 .main_room .cont .room.is-static .swiper-slide{width:calc(50% - 17px); max-width:511px; flex:0 0 auto; height:auto;}
-.main_room .cont .room.is-static .c01 .img,
-.main_room .cont .room.is-static .c01:nth-child(even) .img{height:auto; aspect-ratio:1 / 1;}
+.main_room .cont .room.is-static:not(.is-single) .c01 .img,
+.main_room .cont .room.is-static:not(.is-single) .c01:nth-child(even) .img{height:auto; aspect-ratio:1 / 1;}
+/* 객실 1개: 가로 꽉 찬 카드 1장, 이미지 높이는 기본 .c01 .img 높이(500/460/420/380/320) 그대로 */
+.main_room .cont .room.is-static.is-single .swiper-slide{width:100%; max-width:none;}
 
 @media only screen and (max-width:1480px) {
 
@@ -1934,12 +1981,13 @@ v-scrollbar
 .pre-wrap .vimg:before{width:30px;height:40px; left:50%;margin-left:-15px; top:-20px; background:rgb(from var(--color-primary) r g b / 0.3); display:block; content:"";position:Absolute;}
 .pre-wrap .vimg:after{width:0;height:40px; left:50%;margin-left:-1px; top:-20px; border-left:1px solid rgb(from var(--color-secondary) r g b / 0.65); display:block; content:"";position:Absolute;}
 
-.pre-wrap .vimg .img {margin-top: 85px;height: 600px;background-size: cover !important;animation-delay: 0.6s;}
+.pre-wrap .vimg .img {margin-top: 85px;animation-delay: 0.6s;}
+.pre-wrap .vimg .img img {display:block;width:100%;height:auto;}
 
 @media only screen and (max-width:1250px) {
     .pre-wrap .vimg{margin-top:80px;}
     .pre-wrap .vimg .stit{margin-top:25px;font-size:14px;}
-    .pre-wrap .vimg .img{margin-top:60px; height:500px;}
+    .pre-wrap .vimg .img{margin-top:60px;}
 }
 @media only screen and (max-width:1100px) {
 
@@ -1948,17 +1996,16 @@ v-scrollbar
 
     .pre-wrap .vimg:after{height:30px; top:-15px;}
     .pre-wrap .vimg .stit{margin-top:20px;font-size:13px;}
-    .pre-wrap .vimg .img{margin-top:40px; height:400px;}
+    .pre-wrap .vimg .img{margin-top:40px;}
 }
 @media only screen and (max-width:680px) {
     .pre-wrap .vimg{margin-top:60px;}
     .pre-wrap .vimg .stit{margin-top:15px;font-size:12px;}
-    .pre-wrap .vimg .img{margin-top:25px; height:300px;}
+    .pre-wrap .vimg .img{margin-top:25px;}
 
 }
 @media only screen and (max-width:480px) {
     .pre-wrap .vimg .stit{margin-top:10px;font-size:11px;}
-    .pre-wrap .vimg .img{ height:200px;}
 }
 
 

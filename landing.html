@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 렌더 게이트: 매핑 전 placeholder 깜빡임 방지 (매핑 완료 시 페이드인) -->
+    <style>
+      html.tpl-loading body {
+        opacity: 0;
+      }
+      body {
+        opacity: 1;
+        transition: opacity 0.3s ease;
+      }
+    </style>
+    <script>
+      document.documentElement.classList.add('tpl-loading');
+      window.__tplReveal = function () {
+        document.documentElement.classList.remove('tpl-loading');
+      };
+      setTimeout(function () {
+        window.__tplReveal && window.__tplReveal();
+      }, 3000);
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:type" content="website" />
+    <title data-page-title>영월 유앤아이 스파 펜션</title>
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" type="text/css" href="styles/theme.css" />
+    <link rel="stylesheet" type="text/css" href="styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="styles/landing.css" />
+    <!-- Open Graph Meta Tags for Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="영월 유앤아이 스파 펜션" />
+  <meta property="og:description" content="일상의 피로를 풀어 줄 따뜻한 스파와 감성을 채워 줄 불멍이 있는 영월 유앤아이 스파 펜션으로 놀러 오세요." />
+  <meta property="og:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/uAdysbIawYSe.jpg" />
+  <meta property="og:url" content="https://youandipension.kr" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="영월 유앤아이 스파 펜션" />
+  <meta name="twitter:description" content="일상의 피로를 풀어 줄 따뜻한 스파와 감성을 채워 줄 불멍이 있는 영월 유앤아이 스파 펜션으로 놀러 오세요." />
+  <meta name="twitter:image" content="https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/uAdysbIawYSe.jpg" />
+  <meta name="naver-site-verification" content="4d7ecdc640a0e328dd3fe9e84e2033fb2a5a10a5" />
+</head>
+
+  <body oncontextmenu="return false;" onselectstart="return false" ondragstart="return false;">
+    <!-- 랜딩 게이트: 헤더/푸터 없음 — 숙소를 아직 고르기 전 화면이라
+         특정 숙소의 내비게이션(ABOUT/ROOMS/SPECIAL 등)을 보여줄 수 없다.
+         himongpoolvilla.kr(3카드) / haimom(2카드) 형태의 "여러 숙소 게이트" 참고. -->
+    <div id="landing-gate">
+      <!-- data-* 속성 : data-landing-cards (동적 매핑, li 개수 = 카드 수)
+           pages.landing.sections[0].about[] -->
+      <ul class="landing_cards" data-landing-cards>
+        <!-- MAPPER: about[i] → li.landing_card > a > div.landing_card_bg + div.landing_card_overlay + div.landing_card_content -->
+      </ul>
+    </div>
+
+    <script src="js/image-helpers.js"></script>
+    <script src="js/preview-handler.js"></script>
+    <script src="js/data-mapper/core/base-mapper.js"></script>
+    <script src="js/data-mapper/pages/landing-mapper.js"></script>
+    <script src="js/pages/landing.js"></script>
+  </body>
+</html>

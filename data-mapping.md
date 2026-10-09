@@ -74,6 +74,8 @@ roomStructures[0] + "/ " + 값≥1인 항목들 나열
 | `data-logo`                    | 로고 `<img>` (`.logo a > img`)                                                                    | `homepage.images[0].logo[isSelected].url` (없으면 placeholder, width 140px)                          |
 | `data-booking-link`            | 예약하기 `<a>` (RESERVE 대메뉴/소메뉴, btn_reserve PC, aside, 모바일 플로팅 `.btn_reserve_fixed`) | `property.realtimeBookingId` (값 있으면 `href`에 직접 주입 + `target=_blank`, 빈값이면 미적용)       |
 | `data-ybs-button`              | YBS `<a>` (`.btn_ybs`)                                                                            | `property.ybsId` (없으면 숨김, `https://rev.yapen.co.kr/external?ypIdx={ybsId}`)                     |
+| `data-homepage-socialLinks-blog` | 네이버 `<a>` (`.btn_naver`, N 로고 — 원본 fisterrapension.kr)                                 | `homepage.socialLinks.blog` (네이버 플레이스 주소. 값 있으면 `href` + 노출, 없으면 숨김)             |
+| `data-homepage-socialLinks-instagram` | 인스타그램 `<a>` (`.btn_insta` — 원본 thebestpoolvilla.co.kr)                            | `homepage.socialLinks.instagram` (값 있으면 `href` + 노출, 없으면 숨김)                               |
 | `data-rooms-submenu`           | PC ROOMS 서브 `<ul.depth_box>`                                                                    | `customFields.roomtypes[]` (미리보기 다음 동적 생성)                                                 |
 | `data-rooms-submenu-mobile`    | 모바일 ROOMS 서브 `<ul.depth_list>`                                                               | `customFields.roomtypes[]` (동일)                                                                    |
 | `data-facility-submenu`        | PC SPECIAL 서브 `<ul.depth_box>`                                                                  | `property.facilities[]` (동적 생성)                                                                  |
@@ -84,6 +86,8 @@ roomStructures[0] + "/ " + 값≥1인 항목들 나열
 - ROOMS 서브메뉴: `customFields.roomtypes[].name`(빈 이름 skip) 기준 `<li data-mapped><a href="room.html?id={id}">` 생성.
 - SPECIAL 서브메뉴: `property.facilities[].name` 기준 `<li data-mapped><a href="facility.html?id={id}">` 생성.
 - 미리보기 `<li data-menu-id="layout-map">`는 정적 baseline로 보존, 동적 객실은 그 뒤에 추가.
+- 네이버·인스타 버튼(`mapSocialLinks`): 마크업 기본 `display:none`, `homepage.socialLinks` 4종(facebook/instagram/blog/youtube)을 모두 보되 헤더 마크업은 blog·instagram 만 있다. 하나라도 보이면 `<html data-social="on">` → PC 메뉴(`.hd_lnb`)를 1480px 이하에서 왼쪽으로 밀어 버튼과 겹치지 않게 한다(`styles/style.css`).
+- 어드민 프리뷰 `section_update` 의 `section: 'socialLinks'` 는 페이지 섹션이 아니라 `homepage.socialLinks` 를 통째로 바꾸고 헤더 소셜 버튼만 다시 매핑한다(`preview-handler.js` `remapSocialLinks`).
 
 ---
 
@@ -461,3 +465,44 @@ Room Preview(미리보기)  →  전체 객실 (그룹과 무관), 카드마다 
   매퍼는 이름만 바꾼다**.
 - 값이 없을 때(백오피스 미입력 → `""`) 는 건드리지 않으므로 기존 트립일레븐 문구가 그대로 남는다.
 - `trip11.kr` 링크는 변경하지 않는다.
+
+---
+
+## landing.html (선택 기능 — 여러 숙소 게이트)
+
+t-template-A 와 같은 구현이다 (상세 스키마·카드 구조는 `t-template-A/data-mapping.md` 의 landing 절).
+헤더/푸터가 없는 별도 페이지이고, 카드(`pages.landing.sections[0].about[]`, 1~3장)를 그리드로 나란히 놓는다.
+
+**루트 가드** — `IndexMapper.mapPage()` → `maybeRedirectToLanding()` → `shouldEnterLanding()`
+(+ `index-mapper.js` 로드 직후 `earlyLandingGate` 가 JSON 을 바로 읽어 같은 판단을 한다. 판단 전까지 `__tplReveal` 을 붙잡아 두고,
+랜딩으로 보내기로 했으면 이후 노출 요청을 무시해 index 가 비치지 않는다. 3초 뒤에는 무조건 노출)
+
+- 어드민 프리뷰 iframe 안이면 skip
+- `pages.landing.sections[0].enabled !== true` 면 skip — **명시적으로 켠 숙소만** 가로챈다.
+  섹션이 없거나 `enabled` 가 false/누락이면 기존처럼 `index.html` 을 그대로 보여준다
+- `document.referrer` 가 같은 origin → skip (헤더/푸터 로고, 랜딩의 자기 자신 카드)
+- `document.referrer` 호스트가 `about[].domain` 중 하나 → skip (연결 숙소 랜딩에서 카드로 넘어옴)
+- 그 외 (주소 직접 입력·즐겨찾기·검색/외부 링크) → `location.replace('landing.html')`
+
+쿼리 파라미터 없이 **referrer** 로 "랜딩을 이미 거쳤는지" 를 가른다.
+
+- 크로스 도메인 referrer 는 브라우저 기본 정책(`strict-origin-when-cross-origin`)상 origin 만 오므로 호스트로만 비교한다 (`www.` 유무 무시).
+- 연결 숙소 B 의 랜딩 `about[]` 에 A 의 도메인이 없으면, A 랜딩 → B 카드 클릭 시 B 의 랜딩이 한 번 더 뜬다.
+- https → http 로 넘어가면 브라우저가 referrer 를 보내지 않아 랜딩이 다시 뜬다 (연결 숙소 도메인은 https 전제).
+
+`landing.html` 을 직접 열었는데 `enabled !== true` 면 `404.html` 로 보낸다.
+
+**홈 링크** — 헤더/푸터 로고 링크(common/header.html, common/footer.html)는 원래대로 `index.html` 이다.
+같은 사이트 안 이동이라 referrer 로 가드를 건너뛴다.
+
+**카드 링크** (`landing-mapper.js` `getCardLink()`) — 전부 새 탭, 도착한 index 는 referrer 로 랜딩을 건너뛴다
+
+| 조건                                         | 이동                          |
+| -------------------------------------------- | ----------------------------- |
+| `about[i].propertyId === property.id`        | `./index.html`                |
+| 연결 숙소 + `about[i].domain` 있음           | `{domain}/`                   |
+| 연결 숙소인데 `domain` 없음                  | `href="#"` (비활성)           |
+
+카드는 `about[i].order` 오름차순으로 그린다 (order 가 없거나 같으면 배열 순서 유지).
+카드 배경은 `about[i].images` 첫 장, 로고는 `hero.images[]` 중 `blockId === about[i].blockId`,
+로고가 없으면 `about[i].propertyName` 텍스트, `about[i].title` 은 입력했을 때만 보인다.

@@ -43,9 +43,20 @@
                 </li>
             </ul>
         </div>
+        <!-- 네이버 (PC·모바일, 원본 fisterrapension.kr 의 btn_naver)
+             data-* : data-homepage-socialLinks-blog (homepage.socialLinks.blog = 네이버 플레이스 주소 / 없으면 숨김) -->
+        <a href="#!" target="_blank" rel="noopener" class="btn_naver" style="z-index:999; display:none;" aria-label="네이버" data-homepage-socialLinks-blog>
+            <span class="under" style="background:url(images/n_logo.png) no-repeat top center; background-size:30px auto;width:30%;"></span>
+        </a>
+        <!-- 인스타그램 (PC·모바일, 원본 thebestpoolvilla.co.kr 의 btn_insta)
+             data-* : data-homepage-socialLinks-instagram (homepage.socialLinks.instagram / 없으면 숨김) -->
+        <a href="#!" target="_blank" rel="noopener" class="btn_insta" style="display:none;" aria-label="인스타그램" data-homepage-socialLinks-instagram>
+            <span class="under" style="background:url(images/insta_logo.png) no-repeat top center; background-size:34px auto;width:100%;"></span>
+        </a>
         <!-- 실시간예약 (PC) -->
         <a href="#!" target="_blank" class="btn_reserve" data-booking-link>
-            <img src="images/ico_02.png" class="reser_price">
+            <!-- data-* : data-ybs-badge (property.ybsId 있을 때만 노출 = YBS 버튼과 연동) -->
+            <img src="images/ico_02.png" class="reser_price" style="display:none" data-ybs-badge>
             <span class="under" style="background:url(images/bt_reserve.png) no-repeat top center; background-size:24px auto">Reserve</span>
             <span class="over" style="background:url(images/bt_reserve.png) no-repeat top center; background-size:24px auto">Reserve</span>
         </a>
