@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.1.0",
-    "generatedAt": "2026-10-09T14:08:10.069050963Z",
+    "version": "1.2.0",
+    "generatedAt": "2026-10-23T11:01:03.028118177Z",
     "templateType": "trip_f",
     "propertyId": "a456539f-6d58-4832-a897-f7880de336e4",
     "homepageId": "3e13548b-79a1-44ea-9e0f-587bd00148e5"
@@ -22,7 +22,7 @@
     "checkin": "15:00",
     "checkout": "11:00",
     "checkInOutInfo": "[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 22시 00분\n※ 22시 이후 입실 시 사전 문의",
-    "usageGuide": "[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 22시 00분\n※ 22시 이후 입실 시 사전 문의\n\n[인원추가정보]\n[연령기준]\n- 성인: 8세 이상\n- 아동: 24개월 이상~8세 미만\n- 유아: 24개월 미만\n\n[추가요금]\n- 결제방법: 후결제(현장결제)\n※ 유아(24개월 미만) : 1명까지 무료, 2명 이상 1인 20,000원\n\n[공용바베큐]\n- 이용 객실: 전객실\n- 바베큐 형태: 숯불+그릴\n- 이용 요금: 2~3인 20,000원 / 4~5인 30,000원 / 6인이상 40,000원 (1박기준/현장결제)\n- 이용 시간: 17:00~22:00\n- 신청 시간: 15:00~20:00\n※ 22:00부터는 매너타임 소등\n※ 동절기 추위 문제로 개별 바비큐 장 앞에 숯불 준비\n※ 안전상 개별로 준비한 화기(숯,버너,그릴등) 반입 및 사용 불가\n※ 객실에서 고기굽는조리 일절금지/위반시 소독비용 10만원\n※ 우천,강풍이용가능/동계이용불가\n\n[개별바베큐]\n- 이용 객실: 108호 제외 전객실\n- 이용 장소: 객실 테라스\n- 신청 시간: 15:00~20:00\n- 바베큐 형태: 전기그릴,집게,가위\n- 이용 요금: 2인~3인 10,000원 / 4인~5인 20,000원 / 6인 이상 30,000원 (1박기준/현장결제)\n- 이용 시간: 17:00~22:00\n※ 동계,우천,강풍이용가능\n\n[개별 숯불바베큐]\n- 이용 객실: 108호\n- 바베큐 형태: 숯불,집게,가위\n- 이용 요금: 2~3인 20,000원 / 4~5인 30,000원 / 6인이상 40,000원 (1박기준/현장결제)\n- 이용 시간: 17:00~ 20:30\n※ 동계,강풍 이용가능/우천시 불가\n※ 개별로 준비한 화기는 반입 및 사용 불가\n※ 객실 내에서 고기굽는조리금지/위반시 소독비용 10만원\n※ 개별바베큐 장 앞 야외에서 숯불로 조리하여 들고 들어가 식사하는 것 가능하나 가격은 달라 참고\n※ 이용요금: 2~3인 2만원/4~5인 3만원/6인이상\n\n[공용수영장]\n- 이용 객실: 전객실\n- 운영 기간: 2026년 6월 20일 ~ 9월 27일(날씨와 상황에 따라 변경될 수 있음)\n- 운영 계절: 하절기\n- 이용 요금: 무료\n- 이용 시간: 09:00~22:00\n※ 입실일15시~22시/연박일9시~14시,15시~22시/퇴실일9시~10시\n- 온도 유형: 냉수\n- 이용 복장: 수영복, 비치웨어 착용 후 이용가능\n- 수영장 수심: 90cm\n※ 강 등 외부 물놀이 후에는 반드시 샤워 후 이용해 주세요\n※ 수영장 내 음식물 섭취는 금지되어 있습니다\n※ 수영장 내 소변, 대변, 구토 행위는 절대 금지입니다\n\n[스파]\n- 이용 객실: 102호, 106호, 107호, 201호, 202호\n- 스파 형태: 월풀스파/제트스파\n- 이용 요금:무료\n- 이용 시간: 08:00 ~ 22:00\n- 수용 인원: 월풀스파는 2인 / 제트스파는 4인\n※ 온도 조절 가능  자유롭게 조절 가능\n※ 입욕제 사용 불가\n※ 1회 무료/ 추가이용 시 1회 30,000원\n\n[불멍]\n- 이용 객실: 전객실\n- 이용 장소: 뒷마당 불멍존\n- 제공 구성: 장작 한 망, 마시멜로, 오로라가루 등\n- 이용 요금: 20,000원 (1박기준/현장결제)\n- 신청 시간: 17:00~20:30\n- 외부 장작 반입 가능\n- 개인 용품 지참 가능 단, 의자까지 개인지참필요\n\n[부대시설]\n- 대형 야외 영화관\n\n[편의 및 주변 시설]\n- 와이파이 보유\n- OTT 이용 가능\n※ 본인 계정 사용\n- 넷플릭스 보유 여부 - 가능\n- 엘리베이터 보유 여부 - 없음\n- 선암마을 한반도 지형/차량 약 14분\n- 법흥계곡, 백년계곡/차량 약 20분\n- 원시마울/차량 약 25분\n- 요선정, 요선암/차량 약 20분\n- 별마로 천문대/차량 약 50분\n\n[주차장]\n- 주차장 보유\n- 주차대수: 전용주차장은 1대 / 초과 차량은 공용주차장에 가능\n- 전기차 충전기 이용 불가\n\n[교통편]\n[찾아오는길(차량)]\n※ 네비에 아래 주소 중 하나를 검색해주세요.\n- 지번 주소 : 강원특별자치도 영월군 주천면 용석리 307-3\n- 도로명 주소 : 강원 영월군 주천면 금용강변로 474 유앤아이펜션\n\n[찾아오는길(대중교통)]\n- 제천역-550-1번버스 승차-신천1리 하차-도보 약 5분-펜션 도착",
+    "usageGuide": "[입퇴실안내]\n- 입실: 15시 00분\n- 퇴실: 11시 00분\n- 입실 마감시간: 22시 00분\n※ 22시 이후 입실 시 사전 문의\n\n[인원추가정보]\n[연령기준]\n- 성인: 8세 이상\n- 아동: 24개월 이상~8세 미만\n- 유아: 24개월 미만\n\n[추가 요금]\n- 전객실\n- 요금: 성인 1인 20,000원, 아동 1인 20,000원, 유아 무료\n(1박기준/현장결제)\n※ 유아(24개월 미만) : 1명까지 무료, 2명 이상 1인 20,000원\n\n[공용바베큐]\n- 이용 객실: 전객실\n- 바베큐 형태: 숯불+그릴\n- 이용 요금: 2~3인 20,000원 / 4~5인 30,000원 / 6인이상 40,000원 (1박기준/현장결제)\n- 이용 시간: 17:00~22:00\n- 신청 시간: 15:00~20:00\n※ 22:00부터는 매너타임 소등\n※ 동절기 추위 문제로 개별 바비큐 장 앞에 숯불 준비\n※ 안전상 개별로 준비한 화기(숯,버너,그릴등) 반입 및 사용 불가\n※ 객실에서 고기굽는조리 일절금지/위반시 소독비용 10만원\n※ 우천,강풍이용가능/동계이용불가\n\n[개별바베큐]\n- 이용 객실: 108호 제외 전객실\n- 이용 장소: 객실 테라스\n- 신청 시간: 15:00~20:00\n- 바베큐 형태: 전기그릴,집게,가위\n- 이용 요금: 2인~3인 10,000원 / 4인~5인 20,000원 / 6인 이상 30,000원 (1박기준/현장결제)\n- 이용 시간: 17:00~22:00\n※ 동계,우천,강풍이용가능\n\n[개별 숯불바베큐]\n- 이용 객실: 108호\n- 바베큐 형태: 숯불,집게,가위\n- 이용 요금: 2~3인 20,000원 / 4~5인 30,000원 / 6인이상 40,000원 (1박기준/현장결제)\n- 이용 시간: 17:00~ 20:30\n※ 동계,강풍 이용가능/우천시 불가\n※ 개별로 준비한 화기는 반입 및 사용 불가\n※ 객실 내에서 고기굽는조리금지/위반시 소독비용 10만원\n※ 개별바베큐 장 앞 야외에서 숯불로 조리하여 들고 들어가 식사하는 것 가능하나 가격은 달라 참고\n※ 이용요금: 2~3인 2만원/4~5인 3만원/6인이상\n\n[공용수영장]\n- 이용 객실: 전객실\n- 운영 기간: 2026년 6월 20일 ~ 9월 27일(날씨와 상황에 따라 변경될 수 있음)\n- 운영 계절: 하절기\n- 이용 요금: 무료\n- 이용 시간: 09:00~22:00\n※ 입실일15시~22시/연박일9시~14시,15시~22시/퇴실일9시~10시\n- 온도 유형: 냉수\n- 이용 복장: 수영복, 비치웨어 착용 후 이용가능\n- 수영장 수심: 90cm\n※ 강 등 외부 물놀이 후에는 반드시 샤워 후 이용해 주세요\n※ 수영장 내 음식물 섭취는 금지되어 있습니다\n※ 수영장 내 소변, 대변, 구토 행위는 절대 금지입니다\n\n[스파]\n- 이용 객실: 102호, 106호, 107호, 201호, 202호\n- 스파 형태: 월풀스파/제트스파\n- 이용 요금:무료\n- 이용 시간: 08:00 ~ 22:00\n- 수용 인원: 월풀스파는 2인 / 제트스파는 4인\n※ 온도 조절 가능  자유롭게 조절 가능\n※ 입욕제 사용 불가\n※ 1회 무료/ 추가이용 시 1회 30,000원\n\n[불멍]\n- 이용 객실: 전객실\n- 이용 장소: 뒷마당 불멍존\n- 제공 구성: 장작 한 망, 마시멜로, 오로라가루 등\n- 이용 요금: 20,000원 (1박기준/현장결제)\n- 신청 시간: 17:00~20:30\n- 외부 장작 반입 가능\n- 개인 용품 지참 가능 단, 의자까지 개인지참필요\n\n[부대시설]\n- 대형 야외 영화관\n\n[편의 및 주변 시설]\n- 와이파이 보유\n- OTT 이용 가능\n※ 본인 계정 사용\n- 넷플릭스 보유 여부 - 가능\n- 엘리베이터 보유 여부 - 없음\n- 선암마을 한반도 지형/차량 약 14분\n- 법흥계곡, 백년계곡/차량 약 20분\n- 원시마울/차량 약 25분\n- 요선정, 요선암/차량 약 20분\n- 별마로 천문대/차량 약 50분\n\n[주차장]\n- 주차장 보유\n- 주차대수: 전용주차장은 1대 / 초과 차량은 공용주차장에 가능\n- 전기차 충전기 이용 불가\n\n[교통편]\n[찾아오는길(차량)]\n※ 네비에 아래 주소 중 하나를 검색해주세요.\n- 지번 주소 : 강원특별자치도 영월군 주천면 용석리 307-3\n- 도로명 주소 : 강원 영월군 주천면 금용강변로 474 유앤아이펜션\n\n[찾아오는길(대중교통)]\n- 제천역-550-1번버스 승차-신천1리 하차-도보 약 5분-펜션 도착",
     "reservationGuide": "",
     "province": "도/시",
     "city": "시/군/구",
@@ -387,6 +387,55 @@
             "blockId": null
           }
         ]
+      },
+      {
+        "id": "2b6f56a5-bfbd-4bc2-8a27-a40c26969e40",
+        "name": "편의 및 주변 시설",
+        "description": "",
+        "usageGuide": "- 와이파이 보유\n- OTT 이용 가능\n※ 본인 계정 사용\n- 넷플릭스 보유 여부 - 가능\n- 엘리베이터 보유 여부 - 없음\n- 선암마을 한반도 지형/차량 약 14분\n- 법흥계곡, 백년계곡/차량 약 20분\n- 원시마울/차량 약 25분\n- 요선정, 요선암/차량 약 20분\n- 별마로 천문대/차량 약 50분",
+        "displayOrder": 6,
+        "images": [
+          {
+            "id": "01a1686b-caa9-7030-921b-3e37c5bdeb68",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/2b6f56a5-bfbd-4bc2-8a27-a40c26969e40/main/1792753256325-goe5yonlb4.webp",
+            "sortOrder": 0,
+            "description": "",
+            "isSelected": true,
+            "blockId": null
+          },
+          {
+            "id": "01a1686b-ca26-73fa-b1a5-d76d128629c2",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/2b6f56a5-bfbd-4bc2-8a27-a40c26969e40/main/1792753256327-n77hls69b3.webp",
+            "sortOrder": 1,
+            "description": "",
+            "isSelected": true,
+            "blockId": null
+          },
+          {
+            "id": "01a1686b-c9fe-7aa5-90fa-421355537f0c",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/2b6f56a5-bfbd-4bc2-8a27-a40c26969e40/main/1792753256265-3i5fa35rvl.webp",
+            "sortOrder": 2,
+            "description": "",
+            "isSelected": true,
+            "blockId": null
+          },
+          {
+            "id": "01a1686b-c918-70ec-ad4a-2e8010340fa8",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/2b6f56a5-bfbd-4bc2-8a27-a40c26969e40/main/1792753256323-g7nsyzhe2e.webp",
+            "sortOrder": 3,
+            "description": "",
+            "isSelected": true,
+            "blockId": null
+          },
+          {
+            "id": "01a1686b-ca07-7529-bf52-94abbf2620e2",
+            "url": "https://jlnjajtcnyqupfaqjerz.supabase.co/storage/v1/object/public/app-images/facility/2b6f56a5-bfbd-4bc2-8a27-a40c26969e40/main/1792753256330-kpwhkd3gt1.webp",
+            "sortOrder": 4,
+            "description": "",
+            "isSelected": true,
+            "blockId": null
+          }
+        ]
       }
     ],
     "refundPolicies": [
@@ -448,7 +497,7 @@
           {
             "id": "cb176513-b45b-457d-b341-001b02e74825",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/uAdysbIawYSe.jpg",
-            "sortOrder": 1,
+            "sortOrder": 0,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -458,7 +507,7 @@
           {
             "id": "684d4519-e200-4442-b9e9-2693a0cb5974",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/6JInibWromG9.jpg",
-            "sortOrder": 2,
+            "sortOrder": 0,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -466,7 +515,7 @@
           {
             "id": "9f7b28b8-3a0c-4a5d-92a0-b8a3f37e58b0",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/TQeLEZV7g2G5.jpg",
-            "sortOrder": 3,
+            "sortOrder": 1,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -474,7 +523,7 @@
           {
             "id": "c32febaa-2466-46b9-8daf-d85d096a3cf1",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/qUlGnwzgxPRr.jpg",
-            "sortOrder": 4,
+            "sortOrder": 2,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -482,7 +531,7 @@
           {
             "id": "d42f7274-b3c9-4aa5-93eb-362876d138a8",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/fHJSUbXkhFWm.jpg",
-            "sortOrder": 5,
+            "sortOrder": 3,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -490,7 +539,7 @@
           {
             "id": "72565f62-2be7-48ee-be97-a9c4e5f5a1b5",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/B1LEfwpMiUzT.jpg",
-            "sortOrder": 6,
+            "sortOrder": 4,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -498,7 +547,7 @@
           {
             "id": "775fbc67-8858-4080-97f4-4f5edcc86e76",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/XYyv6Wj3QPfw.jpg",
-            "sortOrder": 7,
+            "sortOrder": 5,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -506,7 +555,7 @@
           {
             "id": "d0222c70-56c2-490a-8a76-784a7dff2455",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/XxmR8sn6rwWy.jpg",
-            "sortOrder": 8,
+            "sortOrder": 6,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -514,7 +563,7 @@
           {
             "id": "6c5edf65-6125-4dc3-8d79-820b7a8f1d66",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/a74GmFtTjQnk.jpg",
-            "sortOrder": 9,
+            "sortOrder": 7,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -522,7 +571,7 @@
           {
             "id": "dddd39ab-4a19-45d5-b66b-e1ecc806eb63",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/W8nBaLb03CUc.jpg",
-            "sortOrder": 10,
+            "sortOrder": 8,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -530,7 +579,7 @@
           {
             "id": "5ccc381e-5b6e-463a-84f0-c779181df78a",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/HwmOSFvPQ6lT.jpg",
-            "sortOrder": 11,
+            "sortOrder": 9,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -538,7 +587,7 @@
           {
             "id": "5756cd48-f8f8-410e-a9f4-9142fad6079d",
             "url": "https://bookingplay-media.s3.amazonaws.com/item_images/2026/07/27/gjc0L4te6Fpw.jpg",
-            "sortOrder": 12,
+            "sortOrder": 10,
             "description": "",
             "isSelected": true,
             "blockId": null
@@ -2901,33 +2950,7 @@
           ]
         },
         "landing": {
-          "sections": [
-            {
-              "enabled": false,
-              "hero": {
-                "images": [ ]
-              },
-              "about": [
-                {
-                  "blockId": "sample-card-1",
-                  "propertyId": "sample-property-1",
-                  "propertyName": "현재 숙소",
-                  "title": "",
-                  "images": [ ],
-                  "order": 1
-                },
-                {
-                  "blockId": "sample-card-2",
-                  "propertyId": "sample-property-2",
-                  "propertyName": "연결 숙소 2",
-                  "domain": "http://localhost:8000/t-template-F",
-                  "title": "",
-                  "images": [ ],
-                  "order": 2
-                }
-              ]
-            }
-          ]
+          "sections": [ ]
         }
       },
       "popup": {
@@ -2947,6 +2970,7 @@
               }
             ],
             "slider": false,
+            "videos": [ ],
             "enabled": true,
             "endDate": null,
             "sortOrder": 0,
@@ -2968,6 +2992,7 @@
               }
             ],
             "slider": false,
+            "videos": [ ],
             "enabled": true,
             "endDate": null,
             "sortOrder": 1,
@@ -4548,7 +4573,10 @@
           ],
           "nameEn": ""
         }
-      ]
+      ],
+      "footer": {
+        "ruralStayMark": null
+      }
     }
   }
 }
